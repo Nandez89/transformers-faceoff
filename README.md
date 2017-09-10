@@ -37,6 +37,7 @@ Each Transformer must either be an Autobot or a Deception. Your program should t
 -- In the event either of the above face each other (or a duplicate of each other), the game immediately ends with all competitors destroyed.
 
 ##Example
+
 Given the following input:
 Soundwave, D, 8,9,2,6,7,5,6,10
 Bluestreak, A, 6,6,7,9,5,2,9,7
