@@ -59,4 +59,5 @@ Survivors from the losing team (Autobots): Hubcap```
 
 ## Running the code
 To access a running version of the code access this plunkr: https://plnkr.co/edit/Pnr3UTo8Rbbo7yTbcl4O?p=preview
+- list.txt contains some data examples to try or is simply a space to copy more and save data sets there.
 - To run the tests inside the plunkr please uncomment the "boot.js" <script> tag in index.html
