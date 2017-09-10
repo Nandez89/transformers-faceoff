@@ -64,12 +64,15 @@ app.controller('BattleController', function($scope, BattleRulesService, Transfor
         alert(error.title + " " + error.message);
         break;
       case 'InvalidTransformerException':
-        alert(error.title + " " + error.message);
+        alert(error.title  + " " + error.message);
         break;
+      case 'BattleTiedException':
+          console.log(error.title + ": " + error.message);
+          break;
       default:
         break;
     }
-  }
+  };
 
   $scope.resolveBattles = function() {
 
@@ -91,8 +94,10 @@ app.controller('BattleController', function($scope, BattleRulesService, Transfor
 
         var winner = BattleRulesService.resolveFaceOff(autobot, decepticon);
 
-        $scope.increaseTeamPoints(winner);
-        $scope.winnerBots.push(winner);
+        if(angular.isDefined(winner)){
+          $scope.increaseTeamPoints(winner); 
+          $scope.winnerBots.push(winner);
+        }
       }
     } catch (error) {
 

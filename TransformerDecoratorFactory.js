@@ -12,8 +12,8 @@ app.factory("TransformerDecoratorFactory", function() {
     if(anyValueIsNan){
       var error = {
         type: "InvalidTransformerException",
-        title: "One of the transformers has wrong attributes",
-        message: "Please review the attributes of any transformer with the name: " + transformer.name
+        title: "One of the transformers has wrong attributes - ",
+        message: "Please review the attributes of any transformer with the name: " + transformer.name + " and try again."
       };
       
       throw error;
@@ -27,8 +27,8 @@ app.factory("TransformerDecoratorFactory", function() {
     if(valueArray.length < 10){
       var error = {
         type: "InvalidTransformerException",
-        title: "One of the transformers is incomplete on the input line",
-        message: "Please review if any transformer with the name: " + valueArray[0]  + " has complete information."
+        title: "One of the transformers entered is incomplete - ",
+        message: "Please review if any transformer with the name: " + valueArray[0]  + " has all the attributes and try again."
       };
       
       throw error;

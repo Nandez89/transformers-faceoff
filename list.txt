@@ -1,3 +1,26 @@
 Soundwave, D, 8,9,2,6,7,5,6,10
 Bluestreak, A, 6,6,7,9,5,2,9,7
 Hubcap, A, 4,4,4,4,4,4,4,4
+
+Soundwave, D, 8,9,2,6,7,5,6,10
+Bluestreak, A, 6,6,7,9,5,2,9,7
+Hubcap, A, 4,4,4,4,4,4,4,4
+Beachcomber, A, 3,9,5,9,6,6,1,10
+First Aid, A, 4,9,4,6,6,7,6,9
+Gnaw, D, 7,3,4,8,2,8,5,5
+
+Hubcap, A, 4,4,4,4,4,4
+Soundwave, D, 8,9,2,6,7,5,6,10
+Shockwave, D , 9, 10, 7, 7,9,9,9,9
+First Aid, A, 4,9,4,6,6,7,6,9
+
+Shockwave, D , 9, 10, 7, 7,9,9,9,9
+Bluestreak, A, 6,E,7,9,5,R,9,7
+Hubcap, A, 4,4,4,4,4,4,4,4
+
+Predaking, D, 8,9,2,6,7,5,6,10
+Bluestreak, A, 6,6,7,9,5,2,9,7
+Hubcap, A, 4,4,4,4,4,4,4,4
+Beachcomber, A, 3,9,5,9,6,6,1,10
+First Aid, A, 4,9,4,6,6,7,6,9
+Optimus Prime, D, 7,3,4,8,2,8,5,5
