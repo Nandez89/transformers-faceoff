@@ -41,7 +41,7 @@ Given the following input:
 ```
 Soundwave, D, 8,9,2,6,7,5,6,10
 Bluestreak, A, 6,6,7,9,5,2,9,7
-Hubcap: A, 4,4,4,4,4,4,4,4
+Hubcap, A, 4,4,4,4,4,4,4,4
 ```
 
 The output should be:
@@ -60,6 +60,6 @@ Survivors from the losing team (Autobots): Hubcap
 - In the event of a tie during a one on one battle the score will be ignored, since adding one point to both teams makes no difference.
 
 ## Running the code
-To access a running version of the code access this plunkr: https://plnkr.co/edit/Pnr3UTo8Rbbo7yTbcl4O?p=preview
+To access a running version of the code access this [Plunkr](https://plnkr.co/edit/Pnr3UTo8Rbbo7yTbcl4O?p=preview)
 - list.txt contains some data examples to try or is simply a space to copy more and save data sets there.
 - To run the tests inside the plunkr please uncomment the "boot.js" <script> tag in index.html

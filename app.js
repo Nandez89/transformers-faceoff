@@ -1,6 +1,6 @@
 var app = angular.module('TransformersApp', []);
 
-app.controller('BattleCtrl', function($scope, BattleRulesService, TransformerDecoratorFactory) {
+app.controller('BattleController', function($scope, BattleRulesService, TransformerDecoratorFactory) {
 
   $scope.transformersInput;
 
@@ -16,9 +16,9 @@ app.controller('BattleCtrl', function($scope, BattleRulesService, TransformerDec
     $scope.remainingBots = angular.equals($scope.loosingTeam, "D") ? $scope.decepticons : $scope.autobots;
   };
 
-  $scope.setLastWinner = function() {
-    var winners = _.remove($scope.winnerBots, function(transformer) {
-      return !angular.equals(transformer.team, $scope.loosingTeam);
+  $scope.setLastWinner = function(winnerBots, loosingTeam) {
+    var winners = _.remove(winnerBots, function(transformer) {
+      return !angular.equals(transformer.team, loosingTeam);
     });
 
     $scope.lastWinner = winners[winners.length - 1];
@@ -58,9 +58,12 @@ app.controller('BattleCtrl', function($scope, BattleRulesService, TransformerDec
     return $scope.autobots.length > 0 && $scope.decepticons.length > 0;
   };
 
-  $scope.handleErrorException = function() {
+  $scope.handleErrorException = function(error) {
     switch (error.type) {
       case 'OptimusPredakingBattleException':
+        alert(error.title + " " + error.message);
+        break;
+      case 'InvalidTransformerException':
         alert(error.title + " " + error.message);
         break;
       default:
@@ -72,33 +75,33 @@ app.controller('BattleCtrl', function($scope, BattleRulesService, TransformerDec
 
     $scope.resetArena();
 
-    $scope.transformersInput.forEach(function(value, key) {
-      $scope.battleLineup.push(TransformerDecoratorFactory.decorateTransformer(value));
-    });
+    try {
 
-    $scope.prepareTeams($scope.battleLineup);
+      $scope.transformersInput.forEach(function(value, key) {
+        $scope.battleLineup.push(TransformerDecoratorFactory.decorateTransformer(value));
+      });
 
-    while ($scope.checkBothTeamsHaveFighters()) {
-      $scope.amountOfBattles++;
+      $scope.prepareTeams($scope.battleLineup);
 
-      var autobot = $scope.autobots.pop();
-      var decepticon = $scope.decepticons.pop();
+      while ($scope.checkBothTeamsHaveFighters()) {
+        $scope.amountOfBattles++;
 
-      try {
+        var autobot = $scope.autobots.pop();
+        var decepticon = $scope.decepticons.pop();
+
         var winner = BattleRulesService.resolveFaceOff(autobot, decepticon);
 
         $scope.increaseTeamPoints(winner);
         $scope.winnerBots.push(winner);
-
-      } catch (error) {
-
-        $scope.handleErrorException(error);
       }
+    } catch (error) {
+
+      $scope.handleErrorException(error);
     }
 
     $scope.setLoosingTeam();
     $scope.setRemainingBots();
-    $scope.setLastWinner();
+    $scope.setLastWinner($scope.winnerBots, $scope.loosingTeam);
   };
 
 });
