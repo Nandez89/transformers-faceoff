@@ -6,7 +6,7 @@ The Transformers are at war and you are in charge of settling the score! You’r
 fight between the Autobots and the Decepticons. 
 
 Here are the rules.
-Each Transformer has the following criteria on their tech spec [See Example:](http://www.ntfa.net/ntfa/techspecs/index.php?cat=Gen1&group=DeceptPZ&char=Predaking for an example)
+Each Transformer has the following criteria on their tech spec [See Example:](http://www.ntfa.net/ntfa/techspecs/index.php?cat=Gen1&group=DeceptPZ&char=Predaking)
 - Strength
 - Intelligence
 - Speed
@@ -45,9 +45,11 @@ Hubcap: A, 4,4,4,4,4,4,4,4
 ```
 
 The output should be:
-```1 battle
+```
+1 battle
 Winning team (Decepticons): Soundwave
-Survivors from the losing team (Autobots): Hubcap```
+Survivors from the losing team (Autobots): Hubcap
+```
 
 
 ## Extra Assumptions
